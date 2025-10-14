@@ -1,11 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --font-white: #fff;
+    --font-black: #000;
+
+    /* --- DARK MODE ---*/
+
+    /* btn-link */
+    --btn-link-dark-box-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.63);
+    --btn-link-dark-background: #424242;
+    --btn-link-dark-background-linear: linear-gradient(0deg, rgb(83, 83, 83) 0%, rgba(0, 0, 0, 1) 100%);
+
+    /* btn-link hover */
+    --btn-link-dark-hover-background: #424242;
+    --btn-link-dark-hover-background-linear: linear-gradient(0deg, rgb(49, 49, 49) 0%, rgb(0, 0, 0) 100%);
+
+    /* social-links */
+    --social-links-dark-background: #000;
+    --social-links-dark-background-hover: #1a1a1a;
+
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "DM Sans", sans-serif;
     /* font-family: "Manrope", sans-serif; */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100dw;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* --header-- */
@@ -85,8 +116,8 @@ header {
 
 .name-description p {
     max-width: 420px;
-    
 }
+
 
 /* links */
 
@@ -97,29 +128,88 @@ header {
 
 .social-links a {
     padding: 8px;
-    background-color: #000;
+    background-color: var(--social-links-dark-background);
     border-radius: 50%;
     transition: .3s ease-in-out;
 }
 
 .social-links a:hover {
-    background-color: #1a1a1a;
+    background-color: var(--social-links-dark-background-hover);
     transform: scale(1.05);
 }
 
 .social-links i {
-    color: white;
+    color: var(--font-white);
     font-size: 1.2rem;
 }
 
 
-/* btns com os links */
+/* botões redes sociais */
 
 .btns-links {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 15px;
 }
 
-.btns-links .btn-link {
-    
+.btn-link,
+#btn-contact-form {
+    border-radius: 8px;
+    max-width: 420px;
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.btn-link {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--btn-link-dark-box-shadow);
+    background: var(--btn-link-dark-background);
+    background: var(--btn-link-dark-background-linear);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.btn-link:hover {
+    background: var(--btn-link-dark-hover-background);
+    background: var(--btn-link-dark-hover-background-linear);
+    transform: scale(1.008);
+}
+
+.btn-link i {
+    color: var(--font-white);
+    font-size: 1.1rem;
+}
+
+.btn-link-name span {
+    font-size: 1.1rem;
+    color: var(--font-white);
+    margin-left: 8px;
+}
+
+/* .btn-link-name .fa-earth-americas, .fa-linkedin-in {
+    color: #096ec0;
+    } */
+
+/* botão de contato */
+
+#btn-contact-form {
+    background: #3b3559;
+    background: linear-gradient(90deg, rgb(53, 61, 89) 0%, rgba(60, 60, 199, 1) 35%, rgb(45, 150, 173) 100%);
+    color: var(--font-white);
+    border: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+#btn-contact-form:hover {
+    background: linear-gradient(90deg, rgb(42, 48, 70) 0%, rgb(53, 53, 179) 35%, rgb(38, 128, 148) 100%);
+}
+
+#btn-contact-form,
+i {
+    font-size: 1.1rem
 }
