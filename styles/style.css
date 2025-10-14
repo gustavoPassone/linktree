@@ -4,6 +4,8 @@
     --font-white: #fff;
     --font-black: #000;
 
+    --bg-light: #f1f1f1;
+
     /* --- DARK MODE ---*/
 
     /* btn-link */
@@ -19,6 +21,21 @@
     --social-links-dark-background: #000;
     --social-links-dark-background-hover: #1a1a1a;
 
+
+    /* --- LIGTH MODE --- */
+
+    /* btn-link */
+    --btn-link-light-box-shadow: 0 1px 5px 0px rgba(29, 29, 29, 0.63);
+    --btn-link-light-background: #d4d4d4;
+    --btn-link-light-background-linear: linear-gradient(0deg, rgb(202, 202, 202) 0%, rgb(255, 255, 255) 100%);
+
+    /* btn-link hover */
+    --btn-link-light-hover-background: #424242;
+    --btn-link-light-hover-background-linear: linear-gradient(0deg, rgb(184, 184, 184) 0%, rgb(231, 231, 231) 100%);
+
+    /* social-links */
+    --social-links-light-background: rgb(228, 228, 228);
+    --social-links-light-background-hover: rgb(202, 202, 202);
 }
 
 * {
@@ -128,18 +145,18 @@ header {
 
 .social-links a {
     padding: 8px;
-    background-color: var(--social-links-dark-background);
+    background-color: var(--social-links-light-background);
     border-radius: 50%;
     transition: .3s ease-in-out;
 }
 
 .social-links a:hover {
-    background-color: var(--social-links-dark-background-hover);
+    background-color: var(--social-links-light-background-hover);
     transform: scale(1.05);
 }
 
 .social-links i {
-    color: var(--font-white);
+    color: var(--font-black);
     font-size: 1.2rem;
 }
 
@@ -166,27 +183,27 @@ header {
 .btn-link {
     display: flex;
     justify-content: space-between;
-    box-shadow: var(--btn-link-dark-box-shadow);
-    background: var(--btn-link-dark-background);
-    background: var(--btn-link-dark-background-linear);
+    box-shadow: var(--btn-link-light-box-shadow);
+    background: var(--btn-link-light-background);
+    background: var(--btn-link-light-background-linear);
     cursor: pointer;
     transition: .3s ease-in-out;
 }
 
 .btn-link:hover {
-    background: var(--btn-link-dark-hover-background);
-    background: var(--btn-link-dark-hover-background-linear);
+    background: var(--btn-link-light-hover-background);
+    background: var(--btn-link-light-hover-background-linear);
     transform: scale(1.008);
 }
 
 .btn-link i {
-    color: var(--font-white);
+    color: var(--font-black);
     font-size: 1.1rem;
 }
 
 .btn-link-name span {
     font-size: 1.1rem;
-    color: var(--font-white);
+    color: var(--font-black);
     margin-left: 8px;
 }
 
