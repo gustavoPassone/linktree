@@ -21,7 +21,7 @@
                 <div class="theme">
                     <button id="theme-toggle" class="theme-toggle">
                         <i class="fa-solid fa-sun light-icon"></i>
-                        <i class="fa-solid fa-moon dark-icon" style="display: none;"></i> </button>
+                        <i class="fa-solid fa-moon dark-icon"></i> </button>
                 </div>
             </div>
             <div class="profile-photo">
@@ -35,28 +35,28 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, magnam.</p>
             </div>
             <div class="social-links">
-                <a href="https://github.com/gustavoPassone"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-solid fa-earth-americas"></i></a>
+                <a href="https://github.com/gustavoPassone" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" target="_blank"><i class="fa-solid fa-earth-americas"></i></a>
             </div>
         </div>
 
         <div class="btns-links">
-            <a href="#" class="btn-link">
+            <a href="#" class="btn-link" target="_blank">
                 <div class="btn-link-name">
                     <i class="fa-solid fa-earth-americas"></i>
                     <span>Meu Portfólio</span>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#" class="btn-link">
+            <a href="https://github.com/gustavoPassone" class="btn-link" target="_blank">
                 <div class="btn-link-name">
                     <i class="fa-brands fa-github"></i>
                     <span>Acompanhe meu Código</span>
                 </div>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a href="#" class="btn-link">
+            <a href="#" class="btn-link" target="_blank">
                 <div class="btn-link-name">
                     <i class="fa-brands fa-linkedin-in"></i>
                     <span>Meu LinkedIn</span>
@@ -70,6 +70,29 @@
             </button>
         </div>
     </main>
+
+    <!-- modal com o formulario -->
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Entre em contato</h2>
+            <form id="form-contact">
+                <div class="input-contact-form">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" placeholder="Digite seu nome" id="nome">
+                </div>
+                <div class="input-contact-form">
+                    <label for="email">Seu email</label>
+                    <input type="email" id="email" placeholder="Digite seu email">
+                </div>
+                <div class="input-contact-form">
+                    <label for="mensagem">Sua mensagem</label>
+                    <textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
+                </div>
+                <button type="submit" id="btn-submit-form">Enviar</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; Feito por <span>Gustavo M. Passone</span></p>
