@@ -71,6 +71,12 @@ body {
   background-color: var(--bg-color);
   color: var(--font-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 main {
@@ -94,15 +100,23 @@ header {
 }
 
 .banner {
-  background: #020024;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: linear-gradient(270deg, #020024, #090979, #00d4ff);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
   height: 100%;
   position: relative;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .circle {
@@ -146,11 +160,20 @@ header {
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  border: 6px solid var(--profile-border);
+  border: 6px solid var(--bg-color);
   object-fit: cover;
   object-fit: cover;
   transition: border-color 0.3s ease;
 }
+
+/* .profile-photo img {
+  position: relative;
+  animation: glow 2.5s infinite alternate;
+}
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(45,150,173,0.3); }
+  to { box-shadow: 0 0 25px rgba(45,150,173,0.8); }
+} */
 
 /* --fim do header-- */
 
@@ -210,7 +233,7 @@ header {
 }
 
 .btn-link,
-#btn-contact-form {
+#btn-contact-form{
   border-radius: 8px;
   max-width: 420px;
   width: 100%;
@@ -257,6 +280,8 @@ header {
   cursor: pointer;
   transition: 0.3s ease-in-out;
   font-size: 1.1rem;
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
 }
 
 #btn-contact-form:hover {
@@ -266,6 +291,8 @@ header {
     rgb(53, 53, 179) 35%,
     rgb(38, 128, 148) 100%
   );
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
 }
 
 #btn-contact-form i {

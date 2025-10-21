@@ -59,3 +59,10 @@ window.addEventListener("keydown", (event) => {
     fecharModal();
   }
 });
+
+// copiar email clicando no botão
+document.getElementById('copyEmail').addEventListener('click', (e) => {
+  e.preventDefault(); // impede o link de rolar para o topo
+  navigator.clipboard.writeText('gmpassone@gmail.com');
+  alert('E-mail copiado!');
+});
