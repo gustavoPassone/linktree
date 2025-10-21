@@ -61,8 +61,13 @@ window.addEventListener("keydown", (event) => {
 });
 
 // copiar email clicando no botão
+const textCopyEmail = document.getElementById("copy-email-text");
+
 document.getElementById('copyEmail').addEventListener('click', (e) => {
   e.preventDefault(); // impede o link de rolar para o topo
   navigator.clipboard.writeText('gmpassone@gmail.com');
-  alert('E-mail copiado!');
+  textCopyEmail.innerHTML = 'Copiado!';
+  setTimeout(() => {
+    textCopyEmail.innerHTML = 'Copiar e-mail';
+  }, 2000);
 });
