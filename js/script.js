@@ -63,11 +63,45 @@ window.addEventListener("keydown", (event) => {
 // copiar email clicando no botão
 const textCopyEmail = document.getElementById("copy-email-text");
 
-document.getElementById('copyEmail').addEventListener('click', (e) => {
+document.getElementById("copyEmail").addEventListener("click", (e) => {
   e.preventDefault(); // impede o link de rolar para o topo
-  navigator.clipboard.writeText('gmpassone@gmail.com');
-  textCopyEmail.innerHTML = 'Copiado!';
+  navigator.clipboard.writeText("gmpassone@gmail.com");
+  textCopyEmail.innerHTML = "Copiado!";
   setTimeout(() => {
-    textCopyEmail.innerHTML = 'Copiar e-mail';
+    textCopyEmail.innerHTML = "Copiar e-mail";
   }, 2000);
+});
+
+// ENVIANDO EMAILS COM O EmailJS
+(function () {
+  emailjs.init({
+    publicKey: "K6g6lRQrq2EIApm3l",
+  });
+})();
+
+// seleciona o formulário
+const form = document.getElementById("form-contact");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // o que está enviando
+  const btn = document.getElementById("btn-submit-form");
+  btn.textContent = "Enviando...";
+  btn.disabled = true;
+
+  emailjs.sendForm("service_3mei7bx", "template_x5ehnus", this).then(
+    function () {
+      alert("Mensagem enviada com sucesso!");
+      form.reset();
+      btn.textContent = "Enviar";
+      btn.disabled = false;
+    },
+    function (error) {
+      console.error("Erro:", error);
+      alert("Ocorreu um erro ao enviar. Tente novamente.");
+      btn.textContent = "Enviar";
+      btn.disabled = false;
+    }
+  );
 });
