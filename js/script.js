@@ -72,36 +72,33 @@ document.getElementById("copyEmail").addEventListener("click", (e) => {
   }, 2000);
 });
 
-// ENVIANDO EMAILS COM O EmailJS
-(function () {
-  emailjs.init({
-    publicKey: "K6g6lRQrq2EIApm3l",
-  });
-})();
+// ------- //
 
-// seleciona o formulário
+// enviar email com o Formspree
+
 const form = document.getElementById("form-contact");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
 
-  // o que está enviando
-  const btn = document.getElementById("btn-submit-form");
-  btn.textContent = "Enviando...";
-  btn.disabled = true;
+form.addEventListener("submit", async function (event) {
+  event.preventDefault(); // evita recarregar a página
 
-  emailjs.sendForm("service_3mei7bx", "template_x5ehnus", this).then(
-    function () {
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
       alert("Mensagem enviada com sucesso!");
+      modal.style.display = "none";
       form.reset();
-      btn.textContent = "Enviar";
-      btn.disabled = false;
-    },
-    function (error) {
-      console.error("Erro:", error);
+    } else {
       alert("Ocorreu um erro ao enviar. Tente novamente.");
-      btn.textContent = "Enviar";
-      btn.disabled = false;
     }
-  );
+  } catch (error) {
+    alert("Erro de conexão. Verifique sua internet e tente novamente.");
+  }
 });

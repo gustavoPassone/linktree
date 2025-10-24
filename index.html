@@ -83,7 +83,7 @@
   </main>
 
   <!-- modal com o formulario -->
-  <div class="modal" id="modal">
+  <!--   <div class="modal" id="modal">
     <div class="modal-conteudo">
       <span class="fechar">&times;</span>
       <h2>Entre em contato</h2>
@@ -106,15 +106,52 @@
         <button type="submit" id="btn-submit-form">Enviar</button>
       </form>
     </div>
-  </div>
+  </div> -->
 
+
+
+  <!-- modal com o formulario -->
+  <div class="modal" id="modal">
+    <div class="modal-conteudo">
+      <span class="fechar">&times;</span>
+      <h2>Entre em contato</h2>
+
+      <!-- ACTION será o endpoint do Formspree -->
+      <form id="form-contact" action="https://formspree.io/f/mgvpwved" method="POST">
+        <div class="input-contact-form">
+          <label for="nome">Seu nome</label>
+          <input type="text" id="nome" name="from_name" placeholder="Digite seu nome" required />
+        </div>
+
+        <div class="input-contact-form">
+          <label for="email">Seu email</label>
+          <!-- name _replyto é recomendado para reply-to -->
+          <input type="email" id="email" name="_replyto" placeholder="Digite seu email" required />
+        </div>
+
+        <div class="input-contact-form">
+          <label for="mensagem">Sua mensagem</label>
+          <textarea id="mensagem" name="message" placeholder="Digite sua mensagem..." required></textarea>
+        </div>
+
+        <!-- Honeypot (campo oculto) para reduzir bots -->
+        <div style="display:none;">
+          <label>Leave this field empty</label>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- opcional: redirecionar para página de obrigado -->
+        <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> -->
+
+        <button type="submit" id="btn-submit-form">Enviar</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; Feito por <span>Gustavo M. Passone</span></p>
   </footer>
 
-  <!-- Script do EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
