@@ -18,16 +18,12 @@
 
   /* botões redes sociais */
   --btn-link-shadow: 0 1px 5px 0px rgba(29, 29, 29, 0.63);
-  --btn-link-background: linear-gradient(
-    0deg,
-    rgb(202, 202, 202) 0%,
-    rgb(255, 255, 255) 100%
-  );
-  --btn-link-hover-background: linear-gradient(
-    0deg,
-    rgb(184, 184, 184) 0%,
-    rgb(231, 231, 231) 100%
-  );
+  --btn-link-background: linear-gradient(0deg,
+      rgb(202, 202, 202) 0%,
+      rgb(255, 255, 255) 100%);
+  --btn-link-hover-background: linear-gradient(0deg,
+      rgb(184, 184, 184) 0%,
+      rgb(231, 231, 231) 100%);
 }
 
 /* dark mode variaveis */
@@ -48,16 +44,12 @@
 
   /* botões redes sociais */
   --btn-link-shadow: 0 1px 5px 0px rgba(0, 0, 0, 0.63);
-  --btn-link-background: linear-gradient(
-    0deg,
-    rgb(83, 83, 83) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  --btn-link-hover-background: linear-gradient(
-    0deg,
-    rgb(49, 49, 49) 0%,
-    rgb(0, 0, 0) 100%
-  );
+  --btn-link-background: linear-gradient(0deg,
+      rgb(83, 83, 83) 0%,
+      rgba(0, 0, 0, 1) 100%);
+  --btn-link-hover-background: linear-gradient(0deg,
+      rgb(49, 49, 49) 0%,
+      rgb(0, 0, 0) 100%);
 }
 
 * {
@@ -76,7 +68,9 @@ body {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 main {
@@ -111,9 +105,11 @@ header {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -233,7 +229,7 @@ header {
 }
 
 .btn-link,
-#btn-contact-form{
+#btn-contact-form {
   border-radius: 8px;
   max-width: 420px;
   width: 100%;
@@ -269,12 +265,10 @@ header {
 
 #btn-contact-form {
   background: #3b3559;
-  background: linear-gradient(
-    90deg,
-    rgb(53, 61, 89) 0%,
-    rgba(60, 60, 199, 1) 35%,
-    rgb(45, 150, 173) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(53, 61, 89) 0%,
+      rgba(60, 60, 199, 1) 35%,
+      rgb(45, 150, 173) 100%);
   color: #fff;
   border: none;
   cursor: pointer;
@@ -285,12 +279,10 @@ header {
 }
 
 #btn-contact-form:hover {
-  background: linear-gradient(
-    90deg,
-    rgb(42, 48, 70) 0%,
-    rgb(53, 53, 179) 35%,
-    rgb(38, 128, 148) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(42, 48, 70) 0%,
+      rgb(53, 53, 179) 35%,
+      rgb(38, 128, 148) 100%);
   background-size: 600% 600%;
   animation: gradientMove 10s ease infinite;
 }
@@ -370,12 +362,10 @@ textarea:focus {
 }
 
 #btn-submit-form {
-  background: linear-gradient(
-    90deg,
-    rgb(53, 61, 89) 0%,
-    rgba(60, 60, 199, 1) 35%,
-    rgb(45, 150, 173) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(53, 61, 89) 0%,
+      rgba(60, 60, 199, 1) 35%,
+      rgb(45, 150, 173) 100%);
   color: #fff;
   font-size: 1rem;
   border: none;
@@ -387,12 +377,10 @@ textarea:focus {
 }
 
 #btn-submit-form:hover {
-  background: linear-gradient(
-    90deg,
-    rgb(42, 48, 70) 0%,
-    rgb(53, 53, 179) 35%,
-    rgb(38, 128, 148) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(42, 48, 70) 0%,
+      rgb(53, 53, 179) 35%,
+      rgb(38, 128, 148) 100%);
 }
 
 /* footer */
@@ -406,4 +394,32 @@ footer {
 
 footer span {
   font-weight: 550;
+}
+
+@media (max-width: 455px) {
+
+  .infos,
+  .btns-links {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 362px) {
+  .btn-link-name span {
+    font-size: 1rem;
+  }
+
+  .btn-link,
+  #btn-contact-form {
+    padding: 10px 15px;
+  }
+
+  .name-description h1 {
+    font-size: 1.7rem;
+  }
+
+  .name-description p {
+    font-size: 0.9rem;
+  }
 }
